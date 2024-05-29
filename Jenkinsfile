@@ -19,7 +19,7 @@ pipeline {
                     // Deploy the Docker container
                     def image = docker.image("todoapp:${env.BUILD_ID}")
                     image.inside {
-                        bat 'docker run -d -p 9000:5000 todoapp:${env.BUILD_ID}'
+                        sh 'docker run -d -p 9000:5000 todoapp:${env.BUILD_ID}'
                     }
                 }
             }

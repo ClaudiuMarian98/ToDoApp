@@ -10,9 +10,9 @@ pipeline {
         }
 
 
-        stage('Run') {
+        stage('Docker Image') {
             steps {
-           sh 'python3 app.py'
+          sh 'docker build -t todoapp1 .'
             }
         }
     }
